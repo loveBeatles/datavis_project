@@ -1,1 +1,6 @@
-asylum.csv
+data/asylum_eurostat.csv
+data/emigration_filtered.csv
+data/emigration_whole.csv
+data/immigration_filtered.csv
+data/immigration_whole.csv
+data/ua_asylum.csv
