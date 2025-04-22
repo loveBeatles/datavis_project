@@ -11,11 +11,11 @@ logger = logging.getLogger(__name__)
 DATA_DIR = os.path.abspath("./data")
 os.makedirs(DATA_DIR, exist_ok=True)
 EUROSTAT_DATA = {
-    "migr_imm1ctz": "immigration_whole", # Emigration by citizenship, age and sex
-    "migr_emi1ctz": "emigration_whole", # Emigration by citizenship, age and sex
-    "migr_asydcfstq": "asylum_eurostat", # Asylum and first time asylum applicants
-    "tps00176": "immigration_filtered",
-    "tps00177": "emigration_filtered" 
+    "migr_imm1ctz": "immigration", # Emigration by citizenship, age and sex
+    "migr_emi1ctz": "emigration", # Emigration by citizenship, age and sex
+    "migr_asydcfstq": "asylum", # Asylum and first time asylum applicants
+    "tps00176": "immigration_test",
+    "tps00177": "emigration_test" 
 }
 
 OTHER_DATA = {
