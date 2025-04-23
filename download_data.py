@@ -10,6 +10,7 @@ logger = logging.getLogger(__name__)
 
 DATA_DIR = os.path.abspath("./data")
 os.makedirs(DATA_DIR, exist_ok=True)
+
 EUROSTAT_DATA = {
     "migr_imm1ctz": "immigration_whole", # Emigration by citizenship, age and sex
     "migr_emi1ctz": "emigration_whole", # Emigration by citizenship, age and sex
@@ -19,13 +20,14 @@ EUROSTAT_DATA = {
 }
 
 OTHER_DATA = {
-    # UNHCR API endpoint for Ukrainian sylum seekers
     (
-    "https://api.unhcr.org/population/v1/asylum-applications/?download=true&"
-    "year_from=2020&"
-    "coo=UKR&"  # ISO3 code for Ukraine
-    "coa_region=5&"  # Europe region code
-    "format=csv"
+        "https://api.unhcr.org/population/v1/asylum-applications/?download=true&"
+        "year_from=2013&"
+        "coo=UKR&"                  # Origin country: Ukraine
+        "coa_all=true&"              # Get all countries of asylum
+        "format=csv&"
+        "disaggregations=coa&"       # Force country-level disaggregation
+        "columns=year,coa_name,coa,applied"  # Only get essential columns
     ): "ua_asylum"
 }
 
