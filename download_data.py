@@ -20,15 +20,17 @@ EUROSTAT_DATA = {
 }
 
 OTHER_DATA = {
+    # Combined dataset with both asylum seekers and refugees
     (
-        "https://api.unhcr.org/population/v1/asylum-applications/?download=true&"
+        "https://api.unhcr.org/population/v1/population/?download=true&"
         "year_from=2013&"
         "coo=UKR&"                  # Origin country: Ukraine
         "coa_all=true&"              # Get all countries of asylum
         "format=csv&"
         "disaggregations=coa&"       # Force country-level disaggregation
-        "columns=year,coa_name,coa,applied"  # Only get essential columns
-    ): "ua_asylum"
+        "population_type=ASY,REF&"   # Both asylum seekers and refugees
+        "columns=year,coa_name,coa,population_type,population"
+    ): "ua_displacement"
 }
 
 def download_unhcr_csv(dataset_url: str, filename: str) -> bool:
