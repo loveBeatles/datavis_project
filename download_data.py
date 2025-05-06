@@ -12,7 +12,7 @@ DATA_DIR = os.path.abspath("./data")
 os.makedirs(DATA_DIR, exist_ok=True)
 
 EUROSTAT_DATA = {
-    "migr_imm1ctz": "immigration_whole", # Emigration by citizenship, age and sex
+    "migr_imm1ctz": "immigration_whole", # Immigration by citizenship, age and sex
     "migr_emi1ctz": "emigration_whole", # Emigration by citizenship, age and sex
     "migr_asydcfstq": "asylum_eurostat", # Asylum and first time asylum applicants
     "tps00176": "immigration_filtered",
